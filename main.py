@@ -81,6 +81,29 @@ def index():
 def protected_area():
     return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
 
+@app.route("/sms_callback",methods=["POST"])
+def sms_callback():
+    try:
+        response_to_sms("+254759594677","hello")
+        return "Success",201
+    except:
+        print("ERROR")
+
+def response_to_sms(recipient_phone_number,message):
+    requests.post(
+        "https://api.sandbox.africastalking.com/version1/messaging",
+        data = {
+            "username":"sandbox",
+            "to":recipient_phone_number,
+            "message":message,
+            "from":"42796"
+        },
+        headers = {
+            "apiKey":"8c5334a5474611cf5667f37807da6b2c3b2f8044ee252cfa3dac2aabe5c25cea",
+            "Accept":"application/json",
+            "Content-Type": "application/json"
+        }
+    )
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
