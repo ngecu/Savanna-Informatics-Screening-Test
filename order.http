@@ -1,0 +1,13 @@
+GET http://127.0.0.1:5000/orders
+
+###
+POST http://127.0.0.1:5000/orders
+Content-Type: application/json
+
+{
+    "id": "1",
+    "item": "Samsung WW90TA046AX/NQ Front Load Washing Machine - 9Kg - Silver",
+    "amount":109995,
+    "customer_id":"1"
+}
+
