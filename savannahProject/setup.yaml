@@ -1,0 +1,21 @@
+# setup.yaml
+- hosts: servers
+  tasks:
+    - name: Install docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Install kubectl
+      get_url:
+        url: https://storage.googleapis.com/kubernetes-release/release/v1.22.0/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+        mode: '0755'
+
+    - name: Copy Kubernetes deployment files
+      copy:
+        src: ./deployment.yaml
+        dest: /home/ubuntu/deployment.yaml
+
+    - name: Deploy to Kubernetes
+      command: kubectl apply -f /home/ubuntu/deployment.yaml

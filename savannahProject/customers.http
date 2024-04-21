@@ -1,0 +1,17 @@
+POST http://0.0.0.0:8000/sms_callback
+Content-Type: application/json
+
+{
+
+  "email": "dummy3@example.com",
+  "password": "dummyPassword123",
+  "firstName": "John",
+  "lastName": "Doe",
+  "gender": "male",
+  "nationalID":"36701260",
+  "dob": "1990-01-01",
+  "phone": "123-456-7890",
+  "status": true,
+  "lastLoginDate": "2023-12-31T23:59:59.999Z",
+  "lastLoginIp": "192.168.1.1"
+}
