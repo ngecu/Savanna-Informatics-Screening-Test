@@ -6,6 +6,7 @@ africastalking.initialize(
     username='sandbox',
     api_key='8c5334a5474611cf5667f37807da6b2c3b2f8044ee252cfa3dac2aabe5c25cea'
 )
+PORT = 3000
 
 sms = africastalking.SMS
 
