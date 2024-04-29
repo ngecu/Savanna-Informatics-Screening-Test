@@ -1,4 +1,4 @@
-POST http://0.0.0.0:8000/sms_callback
+POST https://3f99-102-0-5-67.ngrok-free.app/sms_callback
 Content-Type: application/json
 
 {
